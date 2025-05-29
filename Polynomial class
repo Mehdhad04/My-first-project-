@@ -1,0 +1,70 @@
+import math
+
+class polynomial :
+
+    def __init__(self):
+
+        self.polynomial = list()
+
+    def addelement(self,number):
+
+        self.polynomial.append((int)(number))
+
+    def degree(self):
+
+        return len(self.polynomial)
+
+    def toString(self):
+
+        written = ""
+
+
+
+        for i in range(len(self.polynomial)-1,-1,-1):
+
+            written += (str)(self.polynomial[i]) + "x" + "^" + (str)(i) + " " + "+ "
+
+
+
+        return written[0:len(written)-3]
+
+
+
+    def add(self,new):
+
+        li1 = list()
+
+        li1 = new.split()
+
+
+
+
+
+        result = list()
+
+
+
+        for i in range(0,len(li1),1):
+
+            result.append(self.polynomial[i] + (int)(li1[i]))
+
+        return result
+
+
+
+
+
+
+
+p1= polynomial()
+
+p2 = polynomial()
+
+p1.addelement(1)
+
+p1.addelement(2)
+
+p1.addelement(3)
+
+print(p1.toString()) 
+
