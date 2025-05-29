@@ -1,0 +1,80 @@
+
+
+def counter(word):
+
+    accepted = True
+
+    mylist = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
+
+              "v", "w", "x", "y", "z"]
+
+    for i in range(0,len(mylist),1):
+
+        if(word.count(mylist[i])>=3):
+
+            accepted = False
+
+    return accepted
+
+def hasupper(word):
+
+    count =0
+
+    accepted = True
+
+    for i in range(0,len(word),1):
+
+        if(word[i].isupper()):
+
+            count +=1
+
+    if(count>2):
+
+        accepted = False
+
+    return accepted
+
+def countvowel(word):
+
+    vowel = ["a","e","i","o","u"]
+
+    count = 0
+
+    accepted = True
+
+    for i in range(0,len(word),1):
+
+        if( word[i] == "a"or word[i] == "e"or word[i] == "i"or word[i] == "o"or word[i] == "u"):
+
+            count +=1
+
+    if(count == 0):
+
+        accepted = False
+
+    return accepted
+
+def hascharacter(word):
+
+    accepted = True
+
+    for i in range(0,len(word),1):
+
+        if(word[i] == "/" or word[i] == "|"or word[i] == "-"or word[i] == "\ "or word[i] == "\ "):
+
+            accepted = False
+
+    return accepted
+
+def isvalid(word):
+
+    accepted = True
+
+    if( not( hascharacter(word) and hasupper(word) and countvowel(word) and counter(word))):
+
+        accepted = False
+
+    return accepted
+
+print(isvalid("Takhfif VIZHEEEE porteghal dr link zir : "))
+
